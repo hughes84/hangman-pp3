@@ -1,3 +1,26 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import colorama
+from colorama import Fore
+colorama.init(autoreset=True)
+
+print(f"{Fore.BLUE}T H E\nH A N G M A N")
+print(f"""
+E N T E R   Y O U R   N A M E   B E L O W
+                  """)
+
+words = [
+    "Serendipity",
+    "Mellifluous",
+    "Quixotic",
+    "Zephyr",
+    "Enigmatic",
+    "Nebulous",
+    "Ephemeral",
+    "Pernicious",
+    "Halcyon",
+    "Obfuscate",
+    "Quagmire",
+    "Labyrinthine",
+    "Plenitude",
+    "Euphoria"
+]
+
