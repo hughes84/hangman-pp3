@@ -8,7 +8,6 @@ from colorama import Fore
 colorama.init(autoreset=True)
 
 # Initialize some constants
-player_name = None
 correct_chosen = 10 # Score awarded for each correct letter
 gameover_qs = f"""{Fore.BLUE}
 A - TRY AGAIN
@@ -31,7 +30,7 @@ def clear_terminal():
 
 
 # Main game function
-def game(word_to_guess):
+def game(word_to_guess, player_name):
     """
     Main game function
     """
@@ -75,7 +74,7 @@ def game(word_to_guess):
                 incorrect_picks.append(letter_input)
             # Check if the letter chosen is not in the word
             else:
-                print(f"{Fore.RED} WELL DONE {letter_input} IS IN THE WORD")
+                print(f"{Fore.YELLOW} WELL DONE {letter_input} IS IN THE WORD")
                 chosen_letters.append(letter_input)
                 correct_picks += 1
                 score += correct_chosen
@@ -94,16 +93,15 @@ def game(word_to_guess):
         print(display_gallows(tries))
         word_progress(f"{complete_word}")
         
-    outcome(chosen, word_to_guess, correct_picks, score)
+    outcome(chosen, word_to_guess, score, player_name)
 
 # Function to display the final outcome of the game
-def outcome(chosen, word_to_guess, correct_picks, score):
+def outcome(chosen, word_to_guess, score, player_name):
     """
     Verify if the player completes game
     """
-    if chosen and len(word_to_guess) >= 6 and correct_picks <= 3:
-        print(F"""{Fore.RED}{phases[0]}
-        """)
+    if not chosen:
+            
         print(F"""{Fore.RED}
         HARD LUCK {player_name}, THE CORRECT WORD WAS {word_to_guess}!
         """)
@@ -158,7 +156,7 @@ def main():
     while True:
         if play_game:
             word_to_guess = get_word()
-            game(word_to_guess)
+            game(word_to_guess, player_name)
 
         player_choice = input(f"{gameover_qs}>>> ").lower()
         if player_choice == "a":
