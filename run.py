@@ -94,11 +94,12 @@ def game(word_to_guess):
     # print(F"{Fore.MAGENTA}\nLET'S PLAY THE HANGMAN GAME!\n")
     print(f"""{Fore.MAGENTA}
     YOUR WORD HAS {len(word_to_guess)} LETTERS""")
+    print(display_gallows(tries))
     
     print("\n")
     while not chosen and tries > 1:
         print(f"{Fore.RED}\nINCORRECT PICKS:\n{incorrect_picks}\n")
-        
+        show_score(score)
         print(f"""\n{Fore.BLUE}
         """)
         if tries > 1:
@@ -140,6 +141,7 @@ def game(word_to_guess):
                         GREAT, {complete_word} YOU GOT IT!\n""")
         else:
             print(f"{Fore.MAGENTA}\nIS NOT VALID.\n")
+        print(display_gallows(tries))
         
 
 def get_word():
@@ -148,6 +150,20 @@ def get_word():
     """
     word_to_guess = random.choice(words)
     return word_to_guess.upper()
+
+def display_gallows(tries):
+    """
+    Show the Hangman phases at the beginning of the game 
+    and update them whenever the player makes an incorrect letter choice.
+    """
+    return phases[tries]
+
+
+def show_score(score):
+    """
+    Show score throughout the game
+    """
+    print(f"SCORE: {score}")
 
 
 
