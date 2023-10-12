@@ -1,6 +1,10 @@
 import colorama
+import random
+import os
 from colorama import Fore
+from hangman_structure import *
 colorama.init(autoreset=True)
+
 
 player_name = None
 gameover_qs = f"""{Fore.BLUE}
@@ -30,6 +34,12 @@ words = [
     "Euphoria"
 ]
 
+def clear_terminal():
+    """
+    function to clear terminal
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def main():
     """
     The game begins with a word that has to be guessed.
@@ -45,13 +55,14 @@ def main():
             break
     print(f"""{Fore.MAGENTA}\n
     HELLO {player_name}, WELCOME TO THE HANGMAN GAME!\n""")
-    
+    print(f"{Fore.BLUE}{game_details[0]}")
     input(f"""\n{Fore.BLUE}
     {player_name}, PRESS ENTER TO START THE GAME.\n\n\n    >>> """)
 
     play_game = True
     while True:
         if play_game:
+            word_to_guess = get_word()
             
 
         player_choice = input(f"{gameover_qs}>>> ").lower()
@@ -68,6 +79,18 @@ def main():
             print(f"""{Fore.MAGENTA}\n
             That is not a valid option. Please try again.\n""")
             play_game = False
+
+
+def get_word():
+    """
+    Get a word to guess from the list of words
+    """
+    word_to_guess = random.choice(words)
+    return word_to_guess.upper()
+
+
+
+
 
 if __name__ == '__main__':
     main()
