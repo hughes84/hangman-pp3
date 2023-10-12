@@ -1,12 +1,14 @@
+from hangman_structure import *
+
+import os
 import colorama
 import random
-import os
 from colorama import Fore
-from hangman_structure import *
 colorama.init(autoreset=True)
 
-correct_chosen = 10
+# CONSTS
 player_name = None
+correct_chosen = 10
 gameover_qs = f"""{Fore.BLUE}
 A - TRY AGAIN
 B - FINISH GAME
@@ -17,68 +19,12 @@ print(f"""
 E N T E R   Y O U R   N A M E   B E L O W
                   """)
 
-words = [
-    "Serendipity",
-    "Mellifluous",
-    "Quixotic",
-    "Zephyr",
-    "Enigmatic",
-    "Nebulous",
-    "Ephemeral",
-    "Pernicious",
-    "Halcyon",
-    "Obfuscate",
-    "Quagmire",
-    "Labyrinthine",
-    "Plenitude",
-    "Euphoria"
-]
-
 def clear_terminal():
     """
     function to clear terminal
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def main():
-    """
-    The game begins with a word that has to be guessed.
-    When the game climaxes, the player is given the choice to play again or exit game
-    """
-     # Let player put in own name to play hangman
-    while True:
-        player_name = input(f"\n{Fore.BLUE}NAME:\n>>> ").strip().upper()
-        if len(player_name) < 3:
-            print(f"{Fore.RED}This is not a valid name!")
-            continue
-        else:
-            break
-    print(f"""{Fore.MAGENTA}\n
-    HELLO {player_name}, WELCOME TO THE HANGMAN GAME!\n""")
-    print(f"{Fore.BLUE}{game_details[0]}")
-    input(f"""\n{Fore.BLUE}
-    {player_name}, PRESS ENTER TO START THE GAME.\n\n\n    >>> """)
-
-    play_game = True
-    while True:
-        if play_game:
-            word_to_guess = get_word()
-            game(word_to_guess)
-
-        player_choice = input(f"{gameover_qs}>>> ").lower()
-        if player_choice == "a":
-            print(f"\nYour choice is to keep playing\n")
-            play_game = True
-        elif player_choice == "b":
-            print(f"{Fore.RED}\nGame Finished...")
-            print(f"""{Fore.BLUE}
-            \nThanks for playing, {player_name.capitalize()}.
-            \nHope to see you again soon!\n""")
-            break
-        else:
-            print(f"""{Fore.MAGENTA}\n
-            That is not a valid option. Please try again.\n""")
-            play_game = False
 
 def game(word_to_guess):
     """
@@ -146,34 +92,6 @@ def game(word_to_guess):
         
     outcome(chosen, word_to_guess, correct_picks, score)
 
-def get_word():
-    """
-    Get a word to guess from the list of words
-    """
-    word_to_guess = random.choice(words)
-    return word_to_guess.upper()
-
-def display_gallows(tries):
-    """
-    Show the Hangman phases at the beginning of the game 
-    and update them whenever the player makes an incorrect letter choice.
-    """
-    return phases[tries]
-
-
-def show_score(score):
-    """
-    Show score throughout the game
-    """
-    print(f"SCORE: {score}")
-
-def word_progress(complete_word):
-    """
-    Prints correct guesses
-    """
-    for i in complete_word:
-        print(i, end=" ")
-
 
 def outcome(chosen, word_to_guess, correct_picks, score):
     """
@@ -189,6 +107,94 @@ def outcome(chosen, word_to_guess, correct_picks, score):
     show_score(score)
 
 
+def word_progress(complete_word):
+    """
+    Prints correct guesses
+    """
+    for i in complete_word:
+        print(i, end=" ")
+
+
+def display_gallows(tries):
+    """
+    Show the Hangman phases at the beginning of the game 
+    and update them whenever the player makes an incorrect letter choice.
+    """
+    return phases[tries]
+
+
+def show_score(score):
+    """
+    Show score throughout the game
+    """
+    print(f"SCORE: {score}")
+
+
+
+def main():
+    """
+    The game begins with a word that has to be guessed.
+    When the game climaxes, the player is given the choice to play again or exit game
+    """
+     # Let player put in own name to play hangman
+    while True:
+        player_name = input(f"\n{Fore.BLUE}NAME:\n>>> ").strip().upper()
+        if len(player_name) < 3:
+            print(f"{Fore.RED}This is not a valid name!")
+            continue
+        else:
+            break
+    print(f"""{Fore.MAGENTA}\n
+    HELLO {player_name}, WELCOME TO THE HANGMAN GAME!\n""")
+    print(f"{Fore.BLUE}{game_details[0]}")
+    input(f"""\n{Fore.BLUE}
+    {player_name}, PRESS ENTER TO START THE GAME.\n\n\n    >>> """)
+
+    play_game = True
+    while True:
+        if play_game:
+            word_to_guess = get_word()
+            game(word_to_guess)
+
+        player_choice = input(f"{gameover_qs}>>> ").lower()
+        if player_choice == "a":
+            print(f"\nYour choice is to keep playing\n")
+            play_game = True
+        elif player_choice == "b":
+            print(f"{Fore.RED}\nGame Finished...")
+            print(f"""{Fore.BLUE}
+            \nThanks for playing, {player_name.capitalize()}.
+            \nHope to see you again soon!\n""")
+            break
+        else:
+            print(f"""{Fore.MAGENTA}\n
+            That is not a valid option. Please try again.\n""")
+            play_game = False
+
+words = [
+    "Serendipity",
+    "Mellifluous",
+    "Quixotic",
+    "Zephyr",
+    "Enigmatic",
+    "Nebulous",
+    "Ephemeral",
+    "Pernicious",
+    "Halcyon",
+    "Obfuscate",
+    "Quagmire",
+    "Labyrinthine",
+    "Plenitude",
+    "Euphoria"
+]
+
+
+def get_word():
+    """
+    Get a word to guess from the list of words
+    """
+    word_to_guess = random.choice(words)
+    return word_to_guess.upper()
 
 
 if __name__ == '__main__':
