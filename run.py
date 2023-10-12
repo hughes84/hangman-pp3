@@ -59,7 +59,7 @@ def game(word_to_guess, player_name):
             print(f"{Fore.MAGENTA}\nYOU HAVE {tries} TRIES")
         else:
             print(f"{Fore.RED}\nYOU HAVE {tries} GOES LEFT\n")
-        letter_input = input(f"{Fore.BLUE} CHOSE A LETTER:\n ").upper()
+        letter_input = input(f"{Fore.BLUE} CHOSE A LETTER AND HIT ENTER:\n ").upper()
         clear_terminal()
 
 
@@ -139,11 +139,12 @@ def main():
     The game begins with a word that has to be guessed.
     When the game climaxes, the player is given the choice to play again or exit game
     """
-     # Let player put in own name to play hangman
+    # Let player put in own name to play hangman
     while True:
-        player_name = input(f"\n{Fore.BLUE}NAME:\n>>> ").strip().upper()
+        player_name = input(f"\n{Fore.BLUE}NAME:  ").strip().upper()
         if len(player_name) < 3:
-            print(f"{Fore.RED}This is not a valid name!")
+            print(f"{Fore.RED}This is not a valid name,\n"
+                            "please enter at least 3 letters!")
             continue
         else:
             break
@@ -151,7 +152,7 @@ def main():
     HELLO {player_name}, WELCOME TO THE HANGMAN GAME!\n""")
     print(f"{Fore.BLUE}{game_details[0]}")
     input(f"""\n{Fore.BLUE}
-    {player_name}, PRESS ENTER TO START THE GAME.\n\n\n    >>> """)
+    {player_name}, PRESS ENTER TO START THE GAME\n\n """)
 
     play_game = True
     while True:
