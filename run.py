@@ -144,7 +144,7 @@ def game(word_to_guess):
         print(display_gallows(tries))
         word_progress(f"{complete_word}")
         
-    
+    outcome(chosen, word_to_guess, correct_picks, score)
 
 def get_word():
     """
@@ -174,6 +174,19 @@ def word_progress(complete_word):
     for i in complete_word:
         print(i, end=" ")
 
+
+def outcome(chosen, word_to_guess, correct_picks, score):
+    """
+    Verify if the player completes game
+    """
+    if chosen and len(word_to_guess) >= 6 and correct_picks <= 3:
+        print(F"""{Fore.RED}{phases[0]}
+        """)
+        print(F"""{Fore.RED}
+        HARD LUCK {player_name}, THE CORRECT WORD WAS {word_to_guess}!
+        """)
+
+    show_score(score)
 
 
 
