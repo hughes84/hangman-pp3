@@ -5,7 +5,7 @@ from colorama import Fore
 from hangman_structure import *
 colorama.init(autoreset=True)
 
-
+correct_chosen = 10
 player_name = None
 gameover_qs = f"""{Fore.BLUE}
 A - TRY AGAIN
@@ -63,7 +63,7 @@ def main():
     while True:
         if play_game:
             word_to_guess = get_word()
-            
+            game(word_to_guess)
 
         player_choice = input(f"{gameover_qs}>>> ").lower()
         if player_choice == "a":
@@ -80,6 +80,67 @@ def main():
             That is not a valid option. Please try again.\n""")
             play_game = False
 
+def game(word_to_guess):
+    """
+    Game main function
+    """
+    complete_word = "_" * len(word_to_guess)
+    chosen = False
+    chosen_letters = []
+    incorrect_picks = []
+    correct_picks = 0
+    tries = 7
+    score = 0
+    # print(F"{Fore.MAGENTA}\nLET'S PLAY THE HANGMAN GAME!\n")
+    print(f"""{Fore.MAGENTA}
+    YOUR WORD HAS {len(word_to_guess)} LETTERS""")
+    
+    print("\n")
+    while not chosen and tries > 1:
+        print(f"{Fore.RED}\nINCORRECT PICKS:\n{incorrect_picks}\n")
+        
+        print(f"""\n{Fore.BLUE}
+        """)
+        if tries > 1:
+            print(f"{Fore.MAGENTA}\nYOU HAVE {tries} TRIES")
+        else:
+            print(f"{Fore.RED}\nYOU HAVE {tries} GOES LEFT\n")
+        letter_input = input(f"{Fore.BLUE} CHOSE A LETTER:\n ").upper()
+        clear_terminal()
+        
+    
+        # Check if the player has already chosen the letter
+        # Or if the letter chosen is not in the word
+        # And if the letter chosen is in the word
+        if len(letter_input) == 1 and letter_input.isalpha():
+            if letter_input in chosen_letters:
+                print(f"""{Fore.MAGENTA}\n
+                YOU ALREADY ENTERED {letter_input}\n""")
+            elif letter_input not in word_to_guess:
+                print(f"{Fore.RED} HARD LUCK {letter_input} IS NOT IN THE WORD")
+                
+                
+                tries -= 1
+                chosen_letters.append(letter_input)
+                incorrect_picks.append(letter_input)
+            else:
+                print(f"{Fore.RED} WELL DONE {letter_input} IS IN THE WORD")
+                chosen_letters.append(letter_input)
+                correct_picks += 1
+                score += correct_chosen
+                word_as_list = list(complete_word)
+                indexes = [i for i, letter in enumerate(
+                          word_to_guess) if letter == letter_input]
+                for index in indexes:
+                    word_as_list[index] = letter_input
+                complete_word = "".join(word_as_list)
+                if "_" not in complete_word:
+                    chosen = True
+                    print(f"""{Fore.BLUE}\n
+                        GREAT, {complete_word} YOU GOT IT!\n""")
+        else:
+            print(f"{Fore.MAGENTA}\nIS NOT VALID.\n")
+        
 
 def get_word():
     """
