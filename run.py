@@ -1,14 +1,16 @@
-# Import necessary libraries and modules
-from hangman_structure import *
-
+"""
+Main file
+"""
 import os
-import colorama
 import random
+import colorama
 from colorama import Fore
+from hangman_structure import game_details, phases
 colorama.init(autoreset=True)
 
-# Initialize some constants
-correct_chosen = 10 # Score awarded for each correct letter
+# Initialize constant
+CORRECT_CHOSEN = 10 # Score awarded for each correct letter
+
 gameover_qs = f"""{Fore.BLUE}
 A - TRY AGAIN
 B - FINISH GAME
@@ -16,7 +18,7 @@ B - FINISH GAME
 
 # Introduction and player name input
 print(f"{Fore.BLUE}T H E\nH A N G M A N")
-print(f"""
+print("""
 E N T E R   Y O U R   N A M E   B E L O W
                   """)
 
@@ -41,7 +43,7 @@ def game(word_to_guess, player_name):
     correct_picks = 0
     tries = 7
     score = 0
-    
+
     print(f"""{Fore.MAGENTA}
     YOUR WORD HAS {len(word_to_guess)} LETTERS""")
     print(display_gallows(tries)) # Display the initial state of the hangman
@@ -59,8 +61,8 @@ def game(word_to_guess, player_name):
             print(f"{Fore.RED}\nYOU HAVE {tries} GOES LEFT\n")
         letter_input = input(f"{Fore.BLUE} CHOSE A LETTER:\n ").upper()
         clear_terminal()
-        
-    
+
+
         # Check if the player has already chosen the letter
         if len(letter_input) == 1 and letter_input.isalpha():
             if letter_input in chosen_letters:
@@ -77,7 +79,7 @@ def game(word_to_guess, player_name):
                 print(f"{Fore.YELLOW} WELL DONE {letter_input} IS IN THE WORD")
                 chosen_letters.append(letter_input)
                 correct_picks += 1
-                score += correct_chosen
+                score += CORRECT_CHOSEN
                 word_as_list = list(complete_word)
                 indexes = [i for i, letter in enumerate(
                           word_to_guess) if letter == letter_input]
@@ -92,7 +94,7 @@ def game(word_to_guess, player_name):
             print(f"{Fore.MAGENTA}\nIS NOT VALID.\n")
         print(display_gallows(tries))
         word_progress(f"{complete_word}")
-        
+
     outcome(chosen, word_to_guess, score, player_name)
 
 # Function to display the final outcome of the game
@@ -101,7 +103,6 @@ def outcome(chosen, word_to_guess, score, player_name):
     Verify if the player completes game
     """
     if not chosen:
-            
         print(F"""{Fore.RED}
         HARD LUCK {player_name}, THE CORRECT WORD WAS {word_to_guess}!
         """)
@@ -160,7 +161,7 @@ def main():
 
         player_choice = input(f"{gameover_qs}>>> ").lower()
         if player_choice == "a":
-            print(f"\nYour choice is to keep playing\n")
+            print("\nYour choice is to keep playing\n")
             play_game = True
         elif player_choice == "b":
             print(f"{Fore.RED}\nGame Finished...")
