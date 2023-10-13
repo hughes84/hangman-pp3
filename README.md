@@ -1,32 +1,60 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Welcome to,
 
-Welcome,
+# Hangman
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+Live link - [Hangman](https://hangman-pp3-9fb6a0d7177e.herokuapp.com/)
 
-## Reminders
+![Screenshot]()
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## Introduction
 
-## Creating the Heroku app
+Welcome to Hangman. A game which is both fun and educational. An excellent way to enhance vocabulary and spelling skills while providing entertainment.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Buttons
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Table of Contents
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+## Project Goals
 
-## Constraints
+- __User Goals__
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+    - Entertainment: Users primarily play Hangman to have fun and be entertained providing an enjoyable gaming experience.
+    - Challenge: Users enjoy the challenge of guessing words and figuring out the hidden letters. They want a game that tests their vocabulary, spelling, and problem-solving abilities.
+    - Learning: Some users play Hangman to improve their vocabulary and spelling. It can be used as an educational game to reinforce their existing language skills.
+    - Nostalgia: For some, playing Hangman is nostalgic, reminding them of their childhood. Reliving old memories and recapturing that sense of nostalgia.
+    - Engaging User Interface: Users often appreciate a well-designed and user-friendly interface that makes the game that much more enjoyable to play.
+    - Feedback and Interaction: Users look for clear feedback after each guess, indicating whether their guess was right or wrong. They also enjoy interactive elements like a congratulatory message on winning making the game more engaging.
 
----
+- __Site Owner Goals__
 
-Happy coding!
+    - Technical Performance: Create a Hangman game to run smoothly and efficiently to provide a positive user experience with a good technical performance, such as load times and server reliability.
+    - Education and Learning: Create a Hangman game that is educational, helping users improve their vocabulary, language skills, or other educational objectives.
+    - Entertainment: Provide a Hangman game to help the user have fun and be entertained.
+
+[Back to Table of Contents](#table-of-contents)
+
+## User Experience
+
+- __Target Audience__
+
+- Hangman can reach many audiences for many different reasons such as:
+
+    - Children and Students:
+        Pre-school pupils learning to spell and expand their vocabulary.
+        Primary school students looking for a fun way to reinforce language skills.
+        Teachers who want to use the game as an educational tool in the classroom.
+    - Word Enthusiasts and Puzzle Lovers:
+        Those who enjoy word puzzles, crosswords, and other word-based games.
+        Those interested in expanding their language and vocabulary.
+    - Language Learners:
+        Non English speakers who want to practice and improve the English language.
+    - Nostalgia Seekers:
+        Those who remember playing Hangman as a traditional pen-and-paper game during their childhood.
+        Those looking for a nostalgic gaming experience.
+
+- __User Stories__
+
+
+
