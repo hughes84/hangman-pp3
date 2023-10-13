@@ -4,7 +4,7 @@ Welcome to,
 
 Live link - [Hangman](https://hangman-pp3-9fb6a0d7177e.herokuapp.com/)
 
-![Screenshot]()
+![Screenshot](views/shots/Screenshot%202023-10-13%20153826.png)
 
 ## Introduction
 
