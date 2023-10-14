@@ -10,62 +10,55 @@ phases = [
  """,
  # hangman 6
  Fore.RED +
- """
-                 
+ """                
                    ___________________
                    |                  |
                    |                 _|_
                    |                (o o)
                    |                 (~)
-                   |               __/|\__
+                   |               __/|\\__
                    |                  |
                    |                  |
-                   |                ./ \.
-                   |               _/   \_
+                   |                 / \\
+                   |               _/   \\_
                    |
-                 __|__
-                               
+                 __|__                              
  """,
  # hangman 5
  Fore.RED +
- """
-                 
+ """                 
                    ___________________
                    |                  |
                    |                 _|_
                    |                (o o)
                    |                 (~)
-                   |               __/|\__
+                   |               __/|\\__
                    |                  |
                    |                  |
                    |                ./ 
                    |               _/   
                    |
-                 __|__
-                               
+                 __|__                              
  """,
  #  hangman 4
  Fore.RED +
-"""
-                 
+"""                
                    ___________________
                    |                  |
                    |                 _|_
                    |                (o o)
                    |                 (~)
-                   |               __/|\__
+                   |               __/|\\__
                    |                  |
                    |                  |
                    |                 
                    |                 
                    |
-                 __|__
-                               
+                 __|__                               
  """,
  # hangman 3
  Fore.RED +
- """
-                 
+ """                 
                    ___________________
                    |                  |
                    |                 _|_
@@ -77,13 +70,11 @@ phases = [
                    |                 
                    |                  
                    |
-                 __|__
-                               
+                 __|__                             
  """,
  # hangman 2
  Fore.RED +
- """
-                 
+ """                
                    ___________________
                    |                  |
                    |                 _|_
@@ -95,13 +86,11 @@ phases = [
                    |                 
                    |                 
                    |
-                 __|__
-                               
+                 __|__                              
  """,
  # hangman 1
  Fore.RED +
- """
-                 
+ """                
                    ___________________
                    |                  |
                    |                 _|_
@@ -113,13 +102,12 @@ phases = [
                    |                 
                    |                  
                    |
-                 __|__
-                               
+                 __|__                              
  """,
  # hangman 0
  Fore.RED +
  """
-                 
+         
                    ___________________
                    |                  |
                    |                  |
@@ -131,19 +119,14 @@ phases = [
                    |                 
                    |                  
                    |
-                 __|__
-                               
+                 __|__                           
  """,
 ]
 
-
 game_details = [
  # rules
- 
+
 """
-
-
-
    H A N G M A N H A N G M A N H A N G M A N H A N G M A N H A N G M A N H A H                                                                         
    A                              "R U L E S"                                A           
    N                                                                         N
@@ -157,9 +140,6 @@ game_details = [
    G          5.  For each correct letter the player receives 10pts.         G                             
    M                                                                         M   
    A                                                                         A
-   N H A N G M A N H A N G M A N H A N G M A N H A N G M A N H A N G M A N A N    
-
-   
-                                                                                                       
+   N H A N G M A N H A N G M A N H A N G M A N H A N G M A N H A N G M A N A N                                                                                                          
 """
 ]
