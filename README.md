@@ -4,7 +4,7 @@ Welcome to,
 
 Live link - [Hangman](https://hangman-pp3-9fb6a0d7177e.herokuapp.com/)
 
-![Screenshot](views/shots/Screenshot%202023-10-13%20153826.png)
+![Screenshot](views/shots/mockup.png)
 
 ## Introduction
 
@@ -14,7 +14,15 @@ Buttons
 
 ## Table of Contents
 
-
+- [Project Goals](#project-goals)
+- [User Experience](#user-experience)
+- [Design](#design)
+- [Features](#features)
+- [Technologies](#technologies-used)
+- [Testing](#testing)
+- [Bugs](#bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
 ## Project Goals
 
@@ -82,7 +90,7 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - __Flowchart__ 
 
-![Flowchart](views/shots/Flow.pdf)
+![Flowchart](views/shots/Flow-1.png)
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -149,18 +157,25 @@ Due to this program being built for terminal use, there was not much design. I u
 
 ## Manual Testing
 
-|**Section Tested**||**Input To Validate**||**Expected Outcome**||**Actual Outcome**||**Pass/Fail**|
-|Welcome screen||N/A||Game name appears with instruction for user to enter name below||As expected||Pass|
-|Welcome screen||1||Error message, this is not a valid name||As expected||Pass|
-|Welcome screen||Paul||Move to game play screen||As expected||Pass|
-|Game play screen||2||Entry not valid message appear||As expected||Pass|
-|Game play screen||bb||Entry not valid message appear||As expected||Pass|
-|Game play screen||z||Hard luck z is not in the word message appear||As expected||Pass|
-|Game play screen||e||Well done e is in the word message appear||As expected||Pass|
-|Game play screen||e||You already entered e message to appear||As expected||Pass|
-|Game play screen||Max tries||Hard luck Paul, the correct word was " " message appear||As expected||Pass|
-|Game play screen||Guess word in less than 7 tries||Great, the word was " ", you got it message||As expected||Pass|
-|Game play screen||Guess word in less than 7 tries||Try again and finish game options appear||As expected||Pass|
-|Game play screen||Click A for try again option||Game restarts with new random word||As expected||Pass|
-|Game play screen||Click B for finish game option||Game finishes||As expected||Pass|
+| Section Tested | Input To Validate | Expected Outcome | Actual Outcome | Pass/Fail |
+| -------------- | ----------------- | ---------------- | -------------- | --------- |
+| Welcome screen | N/A | Game name appears with instruction for user to enter name below | As expected | Pass |
+| Welcome screen | 1 | Error message, this is not a valid name | As expected | Pass |
+| Welcome screen | Paul | Move to game play screen | As expected | Pass |
+| Game play screen | 2 | Entry not valid message appear | As expected | Pass |
+| Game play screen | bb | Entry not valid message appear | As expected | Pass |
+| Game play screen | z | Hard luck z is not in the word message appear | As expected | Pass |
+| Game play screen | e | Well done e is in the word message appear | As expected | Pass |
+| Game play screen | e | You already entered e message to appear | As expected | Pass |
+| Game play screen | Max tries | Hard luck Paul, the correct word was " " message appear | As expected | Pass |
+| Game play screen | Guess word in less than 7 tries | Great, the word was " ", you got it message | As expected | Pass |
+| Game play screen | Guess word in less than 7 tries | Try again and finish game options appear | As expected | Pass |
+| Game play screen | Click A for try again option | Game restarts with new random word | As expected | Pass |
+| Game play screen | Click B for finish game option | Game finishes | As expected | Pass |
 
+[Back to Table of Contents](#table-of-contents)
+
+## Bugs
+
+| **Bug** | **Fix** |
+| --- | --- |
