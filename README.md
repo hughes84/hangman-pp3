@@ -90,4 +90,34 @@ Due to this program being built for terminal use, there was not much design. I u
 
 #### Welcome screen
 
+- On the welcome screen the user is met with the game name 'The Hangman' and is instructed to enter their name below
+
+![Welcome Screen]()
+
+#### Game rules
+
+- Next the user is met with the game rules and an instruction to press enter to start game
+
+![Game rules]()
+
+#### Game play
+
+- The user then is brought to the game play screen, met by an empty gallow and given a random word with information on how many letters.
+
+![Gallow]()
+
+- Underneath the user can see the spaces where the letters will populate with correct guesses and below this is where they will see the number of incorrect guesses and their score.
+
+![Guesses/score]()
+
+- At the bottom of the page the user will see the amount of tries they have left and the instruction for each go to pick a letter and hit enter.
+
+![Tries/letter]()
+
+- On completion of the game, win or lose, the user is given the option to try again or finish game.
+
+![Try again/finish game]()
+
+
+
 
