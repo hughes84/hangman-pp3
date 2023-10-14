@@ -106,6 +106,8 @@ Due to this program being built for terminal use, there was not much design. I u
 
 ![Gallow]()
 
+[Back to Table of Contents](#table-of-contents)
+
 - Underneath the user can see the spaces where the letters will populate with correct guesses and below this is where they will see the number of incorrect guesses and their score.
 
 ![Guesses/score]()
@@ -118,6 +120,27 @@ Due to this program being built for terminal use, there was not much design. I u
 
 ![Try again/finish game]()
 
+### __Technologies Used__
 
+- Python: The program was written entirely in Python.
+- Github: Used to store the project's code after being pushed from Git.
+- Vscode: The terminal was used to commit my code and push it to Github.
+- Git: Was used for version control through the vscode terminal.
+- Heroku: Used to deploy, manage, and scale my application.
 
+[Back to Table of Contents](#table-of-contents)
 
+## Testing
+
+#### Python Validation
+
+- I validated my files using Code Institute's Python Linter.
+
+![Validation1]()
+![Validation2]()
+![Validation3]()
+![Validation4]()
+![Validation5]()
+![Validation6]()
+![Validation7]()
+![Validation8]()
