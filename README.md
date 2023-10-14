@@ -72,4 +72,22 @@ Buttons
     - As a user I can see a congratulatory message when I win.
     - As a user I have the option to play again or finish the game.
 
+[Back to Table of Contents](#table-of-contents)
+
+## Design
+
+- __Design Choices__
+
+Due to this program being built for terminal use, there was not much design. I used basic keyboard letters and symbols for my gallow and hangman with different colours from Colorama.
+
+- __Flowchart__ 
+
+![Flowchart](views/shots/Flow.pdf)
+
+[Back to Table of Contents](#table-of-contents)
+
+## Features
+
+#### Welcome screen
+
 
