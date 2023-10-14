@@ -1,8 +1,8 @@
 Welcome to,
 
-# Hangman
+# The Hangman
 
-Live link - [Hangman](https://hangman-pp3-9fb6a0d7177e.herokuapp.com/)
+Live link - [The Hangman](https://hangman-pp3-9fb6a0d7177e.herokuapp.com/)
 
 ![Screenshot](views/shots/mockup.png)
 
@@ -10,7 +10,10 @@ Live link - [Hangman](https://hangman-pp3-9fb6a0d7177e.herokuapp.com/)
 
 Welcome to Hangman. A game which is both fun and educational. An excellent way to enhance vocabulary and spelling skills while providing entertainment.
 
-Buttons
+![GitHub last commit](https://img.shields.io/github/last-commit/hughes84/hangman-pp3?color=red)
+![GitHub contributors](https://img.shields.io/github/contributors/hughes84/hangman-pp3?color=orange)
+![GitHub language count](https://img.shields.io/github/languages/count/hughes84/hangman-pp3?color=yellow)
+![GitHub top language](https://img.shields.io/github/languages/top/hughes84/hangman-pp3?color=green)
 
 ## Table of Contents
 
@@ -90,7 +93,7 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - __Flowchart__ 
 
-![Flowchart](views/shots/Flow-1.png)
+![Flowchart](views/shots/flow.png)
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -100,33 +103,29 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - On the welcome screen the user is met with the game name 'The Hangman' and is instructed to enter their name below
 
-![Welcome Screen]()
+![Welcome Screen](views/shots/H1.png)
 
 #### Game rules
 
 - Next the user is met with the game rules and an instruction to press enter to start game
 
-![Game rules]()
+![Game rules](views/shots/H2.png)
 
 #### Game play
 
 - The user then is brought to the game play screen, met by an empty gallow and given a random word with information on how many letters.
 
-![Gallow]()
-
-[Back to Table of Contents](#table-of-contents)
-
 - Underneath the user can see the spaces where the letters will populate with correct guesses and below this is where they will see the number of incorrect guesses and their score.
-
-![Guesses/score]()
 
 - At the bottom of the page the user will see the amount of tries they have left and the instruction for each go to pick a letter and hit enter.
 
-![Tries/letter]()
+![Gallow](views/shots/H3.png)
 
 - On completion of the game, win or lose, the user is given the option to try again or finish game.
 
-![Try again/finish game]()
+![Try again/finish game](views/shots/H4.png)
+
+[Back to Table of Contents](#table-of-contents)
 
 ### __Technologies Used__
 
@@ -144,14 +143,14 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - I validated my files using Code Institute's Python Linter.
 
-![Validation1]()
-![Validation2]()
-![Validation3]()
-![Validation4]()
-![Validation5]()
-![Validation6]()
-![Validation7]()
-![Validation8]()
+![Validation1](views/shots/V1.png)
+![Validation2](views/shots/V2.png)
+![Validation3](views/shots/V3.png)
+![Validation4](views/shots/V4.png)
+![Validation5](views/shots/V5.png)
+![Validation6](views/shots/V6.png)
+![Validation7](views/shots/V7.png)
+![Validation8](views/shots/V8.png)
 
 [Back to Table of Contents](#table-of-contents)
 
