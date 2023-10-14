@@ -86,7 +86,7 @@ def game(word_to_guess, player_name):
                 if "_" not in complete_word:
                     chosen = True
                     print(f"""{Fore.BLUE}\n
-                        GREAT, {complete_word} YOU GOT IT!\n""")
+                        GREAT, THE WORD WAS {complete_word}, YOU GOT IT!\n""")
         else:
             print(f"{Fore.MAGENTA}\nENTRY NOT VALID.\n")
         print(display_gallows(tries))
