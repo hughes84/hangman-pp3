@@ -48,18 +48,15 @@ def game(word_to_guess, player_name):
     YOUR WORD HAS {len(word_to_guess)} LETTERS""")
     print(display_gallows(tries)) # Display the initial state of the hangman
     word_progress(f"{complete_word}")
-    print("\n")
 
     while not chosen and tries > 1:
         print(f"{Fore.RED}\nINCORRECT PICKS:\n{incorrect_picks}\n")
         show_score(score)
-        print(f"""\n{Fore.BLUE}
-        """)
         if tries > 1:
-            print(f"{Fore.MAGENTA}\nYOU HAVE {tries} TRIES")
+            print(f"{Fore.MAGENTA}YOU HAVE {tries} TRIES")
         else:
-            print(f"{Fore.RED}\nYOU HAVE {tries} GOES LEFT\n")
-        letter_input = input(f"{Fore.BLUE} CHOSE A LETTER AND HIT ENTER:\n ").upper()
+            print(f"{Fore.RED}YOU HAVE {tries} GOES LEFT\n")
+        letter_input = input(f"{Fore.BLUE} CHOOSE A LETTER AND HIT ENTER:\n ").upper()
         clear_terminal()
 
 
@@ -91,7 +88,7 @@ def game(word_to_guess, player_name):
                     print(f"""{Fore.BLUE}\n
                         GREAT, {complete_word} YOU GOT IT!\n""")
         else:
-            print(f"{Fore.MAGENTA}\nIS NOT VALID.\n")
+            print(f"{Fore.MAGENTA}\nENTRY NOT VALID.\n")
         print(display_gallows(tries))
         word_progress(f"{complete_word}")
 
@@ -141,18 +138,17 @@ def main():
     """
     # Let player put in own name to play hangman
     while True:
-        player_name = input(f"\n{Fore.BLUE}NAME:  ").strip().upper()
+        player_name = input(f"{Fore.BLUE}NAME:  ").strip().upper()
         if len(player_name) < 3:
             print(f"{Fore.RED}This is not a valid name,\n"
                             "please enter at least 3 letters!")
             continue
-        else:
-            break
-    print(f"""{Fore.MAGENTA}\n
+        break
+    print(f"""{Fore.MAGENTA}
     HELLO {player_name}, WELCOME TO THE HANGMAN GAME!\n""")
     print(f"{Fore.BLUE}{game_details[0]}")
-    input(f"""\n{Fore.BLUE}
-    {player_name}, PRESS ENTER TO START THE GAME\n\n """)
+    input(f"""{Fore.BLUE}
+    {player_name}, PRESS ENTER TO START THE GAME\n """)
 
     play_game = True
     while True:
@@ -160,14 +156,14 @@ def main():
             word_to_guess = get_word()
             game(word_to_guess, player_name)
 
-        player_choice = input(f"{gameover_qs}>>> ").lower()
+        player_choice = input(f"{gameover_qs} ").lower()
         if player_choice == "a":
-            print("\nYour choice is to keep playing\n")
+            print("\nYour choice is to keep playing\n ")
             play_game = True
         elif player_choice == "b":
-            print(f"{Fore.RED}\nGame Finished...")
+            print(f"{Fore.RED}Game Finished...")
             print(f"""{Fore.BLUE}
-            \nThanks for playing, {player_name.capitalize()}.
+            Thanks for playing, {player_name.capitalize()}.
             \nHope to see you again soon!\n""")
             break
         else:
