@@ -179,9 +179,9 @@ Due to this program being built for terminal use, there was not much design. I u
 | **Bug** | **Fix** |
 | --- | --- |
 | Bug: In hangman structure syntax errors showing in Python Linter due to single backslashes | Added double backslashes to resolve |
-| Bug: On game play page message at top and bottom could not be seen together without scrolling | | Refactored spaces |
-| Bug: | | |
-| Bug: | | |
+| Bug: On game play page message at top and bottom could not be seen together without scrolling | Refactored spaces |
+| Bug: |  |
+| Bug: |  |
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -219,3 +219,5 @@ The following git commands were used throughout development to push code to the 
 - I would like to give thanks to my cohort lead Jamie O Neill for his commited work on our slack study groups and one to one huddle sessions when called upon.
 - I would like to praise those who show up and brainstorm on our weekly study group, every opinion makes a difference.
 - I would like to give thanks to my mentor for his guidance throughout and taking time out to organise a meeting even when fully booked.
+
+[Back to Table of Contents](#table-of-contents)
