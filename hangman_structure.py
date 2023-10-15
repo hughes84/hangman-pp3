@@ -127,8 +127,8 @@ game_details = [
  # rules
 
 """
-   H A N G M A N H A N G M A N H A N G M A N H A N G M A N H A N G M A N H A H                                                                         
-   A                              "R U L E S"                                A           
+   H A N G M A N H A N G M         R U L E S           A N H A N G M A N H A H                                                                         
+   A                                                                         A           
    N                                                                         N
    G          1.  Hangman is an objective based family game where a          G                                                         
    M              word is to be guessed using only letters.                  M
