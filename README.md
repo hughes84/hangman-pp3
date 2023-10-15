@@ -183,3 +183,22 @@ Due to this program being built for terminal use, there was not much design. I u
 | Bug: | | |
 | Bug: | | |
 
+## Deployment
+
+### Version Control
+
+- I used Visual Studio code editor to create my site and pushed to GitHub to the remote repository hangman-pp3.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+- git add <file> - This command was used to add the file(s) to the staging area before they are committed.
+
+- git commit -m “commit message” - This command was used to commit changes to the local repository queue ready for the final step.
+
+- git push - This command was used to push all committed code to the remote repository on github.
+
+### Heroku Deployment
+
+- Heroku provides a platform for hosting web applications, including those built using Python. I deployed my Python-based Hangman game on Heroku, making it accessible to users.
+
+- https://hangman-pp3-9fb6a0d7177e.herokuapp.com/
