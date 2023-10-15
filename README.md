@@ -178,3 +178,8 @@ Due to this program being built for terminal use, there was not much design. I u
 
 | **Bug** | **Fix** |
 | --- | --- |
+| Bug: In hangman structure syntax errors showing in Python Linter due to single backslashes | Added double backslashes to resolve |
+| Bug: On game play page message at top and bottom could not be seen together without scrolling | | Refactored spaces |
+| Bug: | | |
+| Bug: | | |
+
