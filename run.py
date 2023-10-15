@@ -145,10 +145,10 @@ def main():
             continue
         break
     print(f"""{Fore.MAGENTA}
-    HELLO {player_name}, WELCOME TO THE HANGMAN GAME!\n""")
+    HELLO {player_name}, WELCOME TO THE HANGMAN GAME!""")
     print(f"{Fore.BLUE}{game_details[0]}")
     input(f"""{Fore.BLUE}
-    {player_name}, PRESS ENTER TO START THE GAME\n """)
+    {player_name}, PRESS ENTER TO START THE GAME """)
 
     play_game = True
     while True:
