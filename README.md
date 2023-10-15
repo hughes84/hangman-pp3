@@ -183,6 +183,8 @@ Due to this program being built for terminal use, there was not much design. I u
 | Bug: | | |
 | Bug: | | |
 
+[Back to Table of Contents](#table-of-contents)
+
 ## Deployment
 
 ### Version Control
@@ -202,3 +204,18 @@ The following git commands were used throughout development to push code to the 
 - Heroku provides a platform for hosting web applications, including those built using Python. I deployed my Python-based Hangman game on Heroku, making it accessible to users.
 
 - https://hangman-pp3-9fb6a0d7177e.herokuapp.com/
+
+[Back to Table of Contents](#table-of-contents)
+
+## Credits
+
+### Code
+- I got the code for clearing the terminal from [stack overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+
+### __Design__
+- I built my flowchart using the app [Flowdia Diagrams](https://play.google.com/store/apps/details?id=com.bezapps.flowdia)
+
+## __Acknowledgements__
+- I would like to give thanks to my cohort lead Jamie O Neill for his commited work on our slack study groups and one to one huddle sessions when called upon.
+- I would like to praise those who show up and brainstorm on our weekly study group, every opinion makes a difference.
+- I would like to give thanks to my mentor for his guidance throughout and taking time out to organise a meeting even when fully booked.
