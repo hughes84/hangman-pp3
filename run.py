@@ -19,11 +19,17 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('hangman-pp3')
-LEADERBOARD_WORKSHEET = SHEET.worksheet("leaderboard")
+try:
+    CREDS = Credentials.from_service_account_file('creds.json')
+    SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+    GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+    SHEET = GSPREAD_CLIENT.open('hangman-pp3')
+    LEADERBOARD_WORKSHEET = SHEET.worksheet("leaderboard")
+
+except FileNotFoundError:
+    print("Error: please refresh the browser\n")
+except Exception:
+    print("An error occurred: please refresh the browser\n")
 
 
 
