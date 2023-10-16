@@ -205,7 +205,25 @@ The following git commands were used throughout development to push code to the 
 
 - https://hangman-pp3-9fb6a0d7177e.herokuapp.com/
 
+### Clone a repository code locally
+
+- To clone a repository code locally from Git version control system 
+    - Access the repository URL of the remote repository you want to clone
+    - Click on the green code button
+    - Under HTTPS copy the repository link
+    - In your IDE, paste the repository link into the terminal
+    - Git will download all the files from the remote repository to your local machine. Once the process is finished, you'll have a local copy of the repository
+
 [Back to Table of Contents](#table-of-contents)
+
+### Forking in GitHub
+
+- To create a personal copy of a public repository to contribute to a project or create your own version of it follow the steps below
+    - Go to the GitHub repository you wish to fork
+    - Click the fork button on the top right corner of the chosen repository page
+    - After forking the repository, you will be redirected to your own version of the repository. This version is the same as the original.
+    - You can now make changes to the code, adding your own features, fix issues, or modify code within your fork. These changes do not affect the original repository.
+    - If you want to send your changes back to the owner, you can do so by creating a "Pull Request." They can review your changes and decide whether they want to add it to their repository.
 
 ## Credits
 
