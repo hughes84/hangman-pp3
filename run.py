@@ -3,10 +3,29 @@ Main file
 """
 import os
 import random
+import gspread
 import colorama
+from google.oauth2.service_account import Credentials
 from colorama import Fore
+from tabulate import tabulate
 from hangman_structure import game_details, phases
+
 colorama.init(autoreset=True)
+
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('hangman-pp3')
+LEADERBOARD_WORKSHEET = SHEET.worksheet("leaderboard")
+
+
 
 # Initialize constant
 CORRECT_CHOSEN = 10 # Score awarded for each correct letter
@@ -14,6 +33,7 @@ CORRECT_CHOSEN = 10 # Score awarded for each correct letter
 gameover_qs = f"""{Fore.BLUE}
 A - TRY AGAIN
 B - FINISH GAME
+C - VIEW LEADERBOARD
 """
 
 # Introduction and player name input
@@ -103,7 +123,7 @@ def outcome(chosen, word_to_guess, score, player_name):
         print(F"""{Fore.RED}
         HARD LUCK {player_name}, THE CORRECT WORD WAS {word_to_guess}!
         """)
-
+    LEADERBOARD_WORKSHEET.append_row([player_name, score])
     show_score(score)
 
 # Function to display the current progress in word guessing
@@ -166,6 +186,17 @@ def main():
             Thanks for playing, {player_name.capitalize()}.
             \nHope to see you again soon!\n""")
             break
+        elif player_choice == "c":
+            # Get values from the first 20 rows in columns A and B
+            cell_range_a = LEADERBOARD_WORKSHEET.range('A1:A20')
+            cell_range_b = LEADERBOARD_WORKSHEET.range('B1:B20')
+            # Create a list to store the values from columns A and B
+            data_list = []
+            # Iterate through the rows and add A and B values to the list
+            for cell_a, cell_b in zip(cell_range_a, cell_range_b):
+                data_list.append((cell_a.value, cell_b.value))
+            
+            print(tabulate(data_list, ["Name", "Score"], tablefmt="fancy_outline"))
         else:
             print(f"""{Fore.MAGENTA}\n
             That is not a valid option. Please try again.\n""")
