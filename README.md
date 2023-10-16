@@ -25,6 +25,8 @@ Welcome to Hangman. A game which is both fun and educational. An excellent way t
 - [Testing](#testing)
 - [Bugs](#bugs)
 - [Deployment](#deployment)
+- [Cloning](#cloning)
+- [Forking](#forking)
 - [Credits](#credits)
 
 ## Project Goals
