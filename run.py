@@ -86,13 +86,13 @@ def game(word_to_guess, player_name):
     tries = 7
     score = 0
 
-    print(f"""{Fore.MAGENTA}
+    print(f"""{Fore.GREEN}
     YOUR WORD HAS {len(word_to_guess)} LETTERS""")
     print(display_gallows(tries)) # Display the initial state of the hangman
     word_progress(f"{complete_word}")
 
     while not chosen and tries > 1:
-        print(f"{Fore.MAGENTA}\nINCORRECT PICKS:\n{incorrect_picks}\n")
+        print(f"{Fore.GREEN}\nINCORRECT PICKS:\n{incorrect_picks}\n")
         show_score(score)
         if tries > 1:
             print(f"{Fore.GREEN}YOU HAVE {tries} GOES LEFT")
@@ -190,10 +190,10 @@ def main():
             continue
         break
 
-    print(f"""{Fore.MAGENTA}
+    print(f"""{Fore.WHITE}
     HELLO {player_name}, WELCOME TO THE HANGMAN GAME!""")
     print(f"{Fore.GREEN}{game_details[0]}")
-    input(f"""{Fore.MAGENTA}
+    input(f"""{Fore.WHITE}
     {player_name}, PRESS ENTER TO START THE GAME """)
     clear_terminal()
     clear_terminal()
