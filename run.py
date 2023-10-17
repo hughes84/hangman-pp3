@@ -181,7 +181,7 @@ def main():
     """
     # Let player put in own name to play hangman
     while True:
-        player_name = input(f"{Fore.WHITE}NAME:  ").strip().upper()
+        player_name = input(f"{Fore.YELLOW}NAME:  ").strip().upper()
         if len(player_name) < 3:
             print(f"{Fore.RED}This is not a valid name,\n"
                             "please enter at least 3 letters!")
@@ -215,8 +215,7 @@ def main():
             # Create a list to store the all values in the leaderboard
             data_list = LEADERBOARD_WORKSHEET.get_all_values()
             # Sort rows based on the score which is index 1 on each row
-            sorted_list = sorted(data_list, key=lambda x: x[1], reverse=True)
-            
+            sorted_list = sorted(data_list, key=lambda x: x[1], reverse=True)    
             print(tabulate(sorted_list[:10], ["Name", "Score"], tablefmt="fancy_outline"))
             play_game = False
         else:
@@ -224,7 +223,6 @@ def main():
             That is not a valid option. Please try again.\n""")
             clear_terminal()
             play_game = False
-            
 
 # Function to get a word to guess from the list of words
 def get_word():
