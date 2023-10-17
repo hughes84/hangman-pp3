@@ -36,7 +36,7 @@ except Exception:
 
 
 # Initialize constant
-CORRECT_CHOSEN = 10 # Score awarded for each correct letter
+CORRECT_CHOSEN = 5 # Score awarded for each correct letter
 
 gameover_qs = f"""{Fore.BLUE}
 A - TRY AGAIN
@@ -131,7 +131,7 @@ def outcome(chosen, word_to_guess, score, player_name):
         print(F"""{Fore.RED}
         HARD LUCK {player_name}, THE CORRECT WORD WAS {word_to_guess}!
         """)
-    LEADERBOARD_WORKSHEET.append_row([player_name, score])
+    LEADERBOARD_WORKSHEET.append_row([player_name, int(score)])
     show_score(score)
 
 # Function to display the current progress in word guessing
@@ -203,8 +203,9 @@ def main():
             # Iterate through the rows and add A and B values to the list
             for cell_a, cell_b in zip(cell_range_a, cell_range_b):
                 data_list.append((cell_a.value, cell_b.value))
-            
-            print(tabulate(data_list, ["Name", "Score"], tablefmt="fancy_outline"))
+            sorted_list = sorted(data_list, key=lambda x: x[1], reverse=True)
+            print(tabulate(sorted_list, ["Name", "Score"], tablefmt="fancy_outline"))
+            play_game = False
         else:
             print(f"""{Fore.MAGENTA}\n
             That is not a valid option. Please try again.\n""")
