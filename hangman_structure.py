@@ -137,7 +137,7 @@ game_details = [
    H          3.  With each incorrect guess the hangmans body will           H
    A              populate.                                                  A
    N          4.  When the hangmans head and full body appear you lose.      N
-   G          5.  For each correct letter the player receives 10pts.         G
+   G          5.  For each correct letter the player receives 5pts.          G
    M                                                                         M
    A                                                                         A
    N H A N G M A N H A N G M A N H A N G M A N H A N G M A N H A N G M A N A N
