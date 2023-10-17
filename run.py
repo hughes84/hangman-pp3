@@ -215,7 +215,7 @@ def main():
             # Create a list to store the all values in the leaderboard
             data_list = LEADERBOARD_WORKSHEET.get_all_values()
             # Sort rows based on the score which is index 1 on each row
-            sorted_list = sorted(data_list, key=lambda x: x[1], reverse=True)    
+            sorted_list = sorted(data_list, key=lambda x: x[1], reverse=True)
             print(tabulate(sorted_list[:10], ["Name", "Score"], tablefmt="fancy_outline"))
             play_game = False
         else:
