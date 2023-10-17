@@ -12,6 +12,23 @@ from hangman_structure import game_details, phases
 
 colorama.init(autoreset=True)
 
+# List of words for the game
+words = [
+    "Serendipity",
+    "Mellifluous",
+    "Quixotic",
+    "Zephyr",
+    "Enigmatic",
+    "Nebulous",
+    "Ephemeral",
+    "Pernicious",
+    "Halcyon",
+    "Obfuscate",
+    "Quagmire",
+    "Labyrinthine",
+    "Plenitude",
+    "Euphoria"
+]
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -30,22 +47,19 @@ try:
 
 except FileNotFoundError:
     print("Error: please refresh the browser\n")
-except Exception:
-    print("An error occurred: please refresh the browser\n")
-
 
 
 # Initialize constant
 CORRECT_CHOSEN = 5 # Score awarded for each correct letter
 
-gameover_qs = f"""{Fore.BLUE}
+gameover_qs = f"""{Fore.GREEN}
 A - TRY AGAIN
 B - FINISH GAME
 C - VIEW LEADERBOARD
 """
 
 # Introduction and player name input
-print(f"{Fore.BLUE}T H E\nH A N G M A N")
+print(f"{Fore.YELLOW}T H E\nH A N G M A N")
 print("""
 E N T E R   Y O U R   N A M E   B E L O W
                   """)
@@ -78,10 +92,10 @@ def game(word_to_guess, player_name):
     word_progress(f"{complete_word}")
 
     while not chosen and tries > 1:
-        print(f"{Fore.RED}\nINCORRECT PICKS:\n{incorrect_picks}\n")
+        print(f"{Fore.MAGENTA}\nINCORRECT PICKS:\n{incorrect_picks}\n")
         show_score(score)
         if tries > 1:
-            print(f"{Fore.MAGENTA}YOU HAVE {tries} TRIES")
+            print(f"{Fore.GREEN}YOU HAVE {tries} TRIES")
         else:
             print(f"{Fore.RED}YOU HAVE {tries} GOES LEFT\n")
         letter_input = input(f"{Fore.BLUE} CHOOSE A LETTER AND HIT ENTER:\n ").upper()
@@ -95,7 +109,7 @@ def game(word_to_guess, player_name):
                 YOU ALREADY ENTERED {letter_input}\n""")
             # Check if the letter chosen is not in the word
             elif letter_input not in word_to_guess:
-                print(f"{Fore.RED} HARD LUCK {letter_input} IS NOT IN THE WORD")
+                print(f"{Fore.CYAN} HARD LUCK {letter_input} IS NOT IN THE WORD")
                 tries -= 1
                 chosen_letters.append(letter_input)
                 incorrect_picks.append(letter_input)
@@ -104,7 +118,6 @@ def game(word_to_guess, player_name):
                 print(f"{Fore.YELLOW} WELL DONE {letter_input} IS IN THE WORD")
                 chosen_letters.append(letter_input)
                 correct_picks += 1
-                score += CORRECT_CHOSEN
                 word_as_list = list(complete_word)
                 indexes = [i for i, letter in enumerate(
                           word_to_guess) if letter == letter_input]
@@ -115,6 +128,8 @@ def game(word_to_guess, player_name):
                     chosen = True
                     print(f"""{Fore.BLUE}\n
                         GREAT, THE WORD WAS {complete_word}, YOU GOT IT!\n""")
+                    score += 30
+                score += CORRECT_CHOSEN * len(indexes)
         else:
             print(f"{Fore.MAGENTA}\nENTRY NOT VALID.\n")
         print(display_gallows(tries))
@@ -179,6 +194,7 @@ def main():
     {player_name}, PRESS ENTER TO START THE GAME """)
     clear_terminal()
     play_game = True
+
     while True:
         if play_game:
             word_to_guess = get_word()
@@ -194,41 +210,19 @@ def main():
             Thanks for playing, {player_name.capitalize()}.
             \nHope to see you again soon!\n""")
             break
+
         elif player_choice == "c":
-            # Get values from the first 20 rows in columns A and B
-            cell_range_a = LEADERBOARD_WORKSHEET.range('A1:A10')
-            cell_range_b = LEADERBOARD_WORKSHEET.range('B1:B10')
-            # Create a list to store the values from columns A and B
-            data_list = []
-            # Iterate through the rows and add A and B values to the list
-            for cell_a, cell_b in zip(cell_range_a, cell_range_b):
-                data_list.append((cell_a.value, cell_b.value))
+            # Create a list to store the all values in the leaderboard
+            data_list = LEADERBOARD_WORKSHEET.get_all_values()
+            # Sort rows based on the score which is index 1 on each row
             sorted_list = sorted(data_list, key=lambda x: x[1], reverse=True)
             clear_terminal()
-            print(tabulate(sorted_list, ["Name", "Score"], tablefmt="fancy_outline"))
+            print(tabulate(sorted_list[:10], ["Name", "Score"], tablefmt="fancy_outline"))
             play_game = False
         else:
             print(f"""{Fore.MAGENTA}\n
             That is not a valid option. Please try again.\n""")
             play_game = False
-
-# List of words for the game
-words = [
-    "Serendipity",
-    "Mellifluous",
-    "Quixotic",
-    "Zephyr",
-    "Enigmatic",
-    "Nebulous",
-    "Ephemeral",
-    "Pernicious",
-    "Halcyon",
-    "Obfuscate",
-    "Quagmire",
-    "Labyrinthine",
-    "Plenitude",
-    "Euphoria"
-]
 
 # Function to get a word to guess from the list of words
 def get_word():
