@@ -105,10 +105,12 @@ def game(word_to_guess, player_name):
         # Check if the player has already chosen the letter
         if len(letter_input) == 1 and letter_input.isalpha():
             if letter_input in chosen_letters:
+                clear_terminal()
                 print(f"""{Fore.MAGENTA}\n
                 YOU ALREADY ENTERED {letter_input}\n""")
             # Check if the letter chosen is not in the word
             elif letter_input not in word_to_guess:
+                clear_terminal()
                 print(f"{Fore.CYAN} HARD LUCK {letter_input} IS NOT IN THE WORD")
                 tries -= 1
                 chosen_letters.append(letter_input)
@@ -195,6 +197,7 @@ def main():
     input(f"""{Fore.MAGENTA}
     {player_name}, PRESS ENTER TO START THE GAME """)
     clear_terminal()
+    clear_terminal()
     play_game = True
 
     while True:
@@ -204,6 +207,7 @@ def main():
 
         player_choice = input(f"{gameover_qs} ").lower()
         if player_choice == "a":
+            clear_terminal()
             print("\nYour choice is to keep playing\n ")
             play_game = True
         elif player_choice == "b":
@@ -212,7 +216,9 @@ def main():
             Thanks for playing, {player_name.capitalize()}.
             \nHope to see you again soon!\n""")
             break
+
         elif player_choice == "c":
+            clear_terminal()
             # Create a list to store the all values in the leaderboard
             data_list = LEADERBOARD_WORKSHEET.get_all_values()
             # Sort rows based on the score which is index 1 on each row
