@@ -115,6 +115,7 @@ def game(word_to_guess, player_name):
                 incorrect_picks.append(letter_input)
             # Check if the letter chosen is not in the word
             else:
+                clear_terminal()
                 print(f"{Fore.YELLOW} WELL DONE {letter_input} IS IN THE WORD")
                 chosen_letters.append(letter_input)
                 correct_picks += 1
