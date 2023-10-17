@@ -95,7 +95,7 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - __Flowchart__ 
 
-![Flowchart](docs/readme_imgs/flow.png)
+![Flowchart](docs/readme_imgs/flowchart.png)
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -123,7 +123,7 @@ Due to this program being built for terminal use, there was not much design. I u
 
 ![Gallow](docs/readme_imgs/hg3.png)
 
-- On completion of the game, win or lose, the user is given the option to try again or finish game.
+- On completion of the game, win or lose, the user is given the option to try again, finish game or view leaderbaord.
 
 ![Try again/finish game](docs/readme_imgs/hg4.png)
 
@@ -175,12 +175,15 @@ Due to this program being built for terminal use, there was not much design. I u
 | **Bug** | **Fix** |
 | --- | --- |
 | Bug: In hangman structure syntax errors showing in Python Linter due to single backslashes | Added double backslashes to resolve |
-| Bug: On game play page message at top and bottom could not be seen together without scrolling | Refactored spaces |
+| Bug: On game play page message at top and bottom could not be seen together without scrolling | Eliminated spaces |
 | Bug: During gameplay when player chose a letter and pressed enter screen would jump | Added clear terminal function |
-| Bug: On rules screen spaces pushing instructions up page so player needs to scroll| Refactored spaces |
-| Bug: On leaderboard scores not in order of high to low | Sorted rows based on the score | 
+| Bug: On rules screen spaces pushing instructions up page so player needs to scroll| Eliminated spaces |
+| Bug: On leaderboard scores not in order of high to low | Sorted rows based on the high score | 
+| Bug: When user picks letter and it appears twice in the word score only updated for one letter | Multiplied score by amount of indexes where letter appeared |
+
 
 [Back to Table of Contents](#table-of-contents)
+
 
 ## Deployment
 
@@ -228,7 +231,7 @@ The following git commands were used throughout development to push code to the 
 - I got the code for clearing the terminal from [stack overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 
 ### __Design__
-- I built my flowchart using the app [Flowdia Diagrams](https://play.google.com/store/apps/details?id=com.bezapps.flowdia)
+- I designed my flowchart in Visual Studio Code using the extension drawio.png.
 
 ## __Acknowledgements__
 - I would like to give thanks to my cohort lead Jamie O Neill for his commited work on our slack study groups and one to one huddle sessions when called upon.
