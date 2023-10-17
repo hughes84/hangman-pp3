@@ -19,6 +19,8 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
+# Try to connect to Googlesheets, if error notify user
+
 try:
     CREDS = Credentials.from_service_account_file('creds.json')
     SCOPED_CREDS = CREDS.with_scopes(SCOPE)
