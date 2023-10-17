@@ -177,7 +177,7 @@ def main():
     print(f"{Fore.BLUE}{game_details[0]}")
     input(f"""{Fore.BLUE}
     {player_name}, PRESS ENTER TO START THE GAME """)
-
+    clear_terminal()
     play_game = True
     while True:
         if play_game:
@@ -204,6 +204,7 @@ def main():
             for cell_a, cell_b in zip(cell_range_a, cell_range_b):
                 data_list.append((cell_a.value, cell_b.value))
             sorted_list = sorted(data_list, key=lambda x: x[1], reverse=True)
+            clear_terminal()
             print(tabulate(sorted_list, ["Name", "Score"], tablefmt="fancy_outline"))
             play_game = False
         else:
