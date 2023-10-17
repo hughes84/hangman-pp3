@@ -4,7 +4,7 @@ Welcome to,
 
 Live link - [The Hangman](https://hangman-pp3-9fb6a0d7177e.herokuapp.com/)
 
-![Screenshot](docs/readme_imgs/mockup.png)
+![Screenshot](docs/readme_imgs/mock.png)
 
 ## Introduction
 
@@ -105,13 +105,13 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - On the welcome screen the user is met with the game name 'The Hangman' and is instructed to enter their name below
 
-![Welcome Screen](docs/readme_imgs/H1.png)
+![Welcome Screen](docs/readme_imgs/hg1.png)
 
 #### Game rules
 
 - Next the user is met with the game rules and an instruction to press enter to start game
 
-![Game rules](docs/readme_imgs/H2..png)
+![Game rules](docs/readme_imgs/hg2.png)
 
 #### Game play
 
@@ -121,11 +121,11 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - At the bottom of the page the user will see the amount of tries they have left and the instruction for each go to pick a letter and hit enter.
 
-![Gallow](docs/readme_imgs/H3.png)
+![Gallow](docs/readme_imgs/hg3.png)
 
 - On completion of the game, win or lose, the user is given the option to try again or finish game.
 
-![Try again/finish game](docs/readme_imgs/H4.png)
+![Try again/finish game](docs/readme_imgs/hg4.png)
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -145,7 +145,7 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - I validated my files using Code Institute's Python Linter.
 
-![Validation1](docs/readme_imgs/V1.png)
+![Validation1](docs/readme_imgs/v1.png)
 
 
 [Back to Table of Contents](#table-of-contents)
@@ -177,7 +177,8 @@ Due to this program being built for terminal use, there was not much design. I u
 | Bug: In hangman structure syntax errors showing in Python Linter due to single backslashes | Added double backslashes to resolve |
 | Bug: On game play page message at top and bottom could not be seen together without scrolling | Refactored spaces |
 | Bug: During gameplay when player chose a letter and pressed enter screen would jump | Added clear terminal function |
-| Bug: On rules screen spaces pushing instruction up page so player needs to|  |
+| Bug: On rules screen spaces pushing instructions up page so player needs to scroll| Refactored spaces |
+| Bug: On leaderboard scores not in order of high to low | Sorted rows based on the score | 
 
 [Back to Table of Contents](#table-of-contents)
 
