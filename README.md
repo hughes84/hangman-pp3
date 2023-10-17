@@ -127,6 +127,10 @@ Due to this program being built for terminal use, there was not much design. I u
 
 ![Try again/finish game](docs/readme_imgs/hg4.png)
 
+- Leaderboard
+
+![Leaderboard](docs/readme_imgs/Lead.png)
+
 [Back to Table of Contents](#table-of-contents)
 
 ### __Technologies Used__
@@ -145,7 +149,7 @@ Due to this program being built for terminal use, there was not much design. I u
 
 - I validated my files using Code Institute's Python Linter.
 
-![Validation1](docs/readme_imgs/v1.png)
+![Validation1](docs/readme_imgs/linter.png)
 
 
 [Back to Table of Contents](#table-of-contents)
