@@ -95,12 +95,11 @@ def game(word_to_guess, player_name):
         print(f"{Fore.MAGENTA}\nINCORRECT PICKS:\n{incorrect_picks}\n")
         show_score(score)
         if tries > 1:
-            print(f"{Fore.GREEN}YOU HAVE {tries} TRIES")
+            print(f"{Fore.GREEN}YOU HAVE {tries} GOES LEFT")
         else:
             print(f"{Fore.GREEN}YOU HAVE {tries} GOES LEFT\n")
         letter_input = input(f"{Fore.WHITE}CHOOSE A LETTER AND HIT ENTER:\n ").upper()
         clear_terminal()
-
 
         # Check if the player has already chosen the letter
         if len(letter_input) == 1 and letter_input.isalpha():
