@@ -97,8 +97,8 @@ def game(word_to_guess, player_name):
         if tries > 1:
             print(f"{Fore.GREEN}YOU HAVE {tries} TRIES")
         else:
-            print(f"{Fore.RED}YOU HAVE {tries} GOES LEFT\n")
-        letter_input = input(f"{Fore.BLUE} CHOOSE A LETTER AND HIT ENTER:\n ").upper()
+            print(f"{Fore.GREEN}YOU HAVE {tries} GOES LEFT\n")
+        letter_input = input(f"{Fore.WHITE}CHOOSE A LETTER AND HIT ENTER:\n ").upper()
         clear_terminal()
 
 
@@ -126,7 +126,7 @@ def game(word_to_guess, player_name):
                 complete_word = "".join(word_as_list)
                 if "_" not in complete_word:
                     chosen = True
-                    print(f"""{Fore.BLUE}\n
+                    print(f"""{Fore.WHITE}\n
                         GREAT, THE WORD WAS {complete_word}, YOU GOT IT!\n""")
                     score += 30
                 score += CORRECT_CHOSEN * len(indexes)
@@ -181,16 +181,17 @@ def main():
     """
     # Let player put in own name to play hangman
     while True:
-        player_name = input(f"{Fore.BLUE}NAME:  ").strip().upper()
+        player_name = input(f"{Fore.WHITE}NAME:  ").strip().upper()
         if len(player_name) < 3:
             print(f"{Fore.RED}This is not a valid name,\n"
                             "please enter at least 3 letters!")
             continue
         break
+
     print(f"""{Fore.MAGENTA}
     HELLO {player_name}, WELCOME TO THE HANGMAN GAME!""")
-    print(f"{Fore.BLUE}{game_details[0]}")
-    input(f"""{Fore.BLUE}
+    print(f"{Fore.GREEN}{game_details[0]}")
+    input(f"""{Fore.MAGENTA}
     {player_name}, PRESS ENTER TO START THE GAME """)
     clear_terminal()
     play_game = True
@@ -210,19 +211,20 @@ def main():
             Thanks for playing, {player_name.capitalize()}.
             \nHope to see you again soon!\n""")
             break
-
         elif player_choice == "c":
             # Create a list to store the all values in the leaderboard
             data_list = LEADERBOARD_WORKSHEET.get_all_values()
             # Sort rows based on the score which is index 1 on each row
             sorted_list = sorted(data_list, key=lambda x: x[1], reverse=True)
-            clear_terminal()
+            
             print(tabulate(sorted_list[:10], ["Name", "Score"], tablefmt="fancy_outline"))
             play_game = False
         else:
             print(f"""{Fore.MAGENTA}\n
             That is not a valid option. Please try again.\n""")
+            clear_terminal()
             play_game = False
+            
 
 # Function to get a word to guess from the list of words
 def get_word():

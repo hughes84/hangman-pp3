@@ -25,7 +25,7 @@ phases = [
                  __|__                              
  """,
  # hangman 5
- Fore.RED +
+ Fore.WHITE +
  """                 
                    ___________________
                    |                  |
@@ -41,7 +41,7 @@ phases = [
                  __|__                              
  """,
  #  hangman 4
- Fore.RED +
+ Fore.WHITE +
 """                
                    ___________________
                    |                  |
@@ -57,7 +57,7 @@ phases = [
                  __|__                               
  """,
  # hangman 3
- Fore.RED +
+ Fore.WHITE +
  """                 
                    ___________________
                    |                  |
@@ -73,7 +73,7 @@ phases = [
                  __|__                             
  """,
  # hangman 2
- Fore.RED +
+ Fore.WHITE +
  """                
                    ___________________
                    |                  |
@@ -89,7 +89,7 @@ phases = [
                  __|__                              
  """,
  # hangman 1
- Fore.RED +
+ Fore.WHITE +
  """                
                    ___________________
                    |                  |
@@ -105,7 +105,7 @@ phases = [
                  __|__                              
  """,
  # hangman 0
- Fore.RED +
+ Fore.WHITE +
  """
          
                    ___________________
