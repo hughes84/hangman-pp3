@@ -196,8 +196,8 @@ def main():
             break
         elif player_choice == "c":
             # Get values from the first 20 rows in columns A and B
-            cell_range_a = LEADERBOARD_WORKSHEET.range('A1:A20')
-            cell_range_b = LEADERBOARD_WORKSHEET.range('B1:B20')
+            cell_range_a = LEADERBOARD_WORKSHEET.range('A1:A10')
+            cell_range_b = LEADERBOARD_WORKSHEET.range('B1:B10')
             # Create a list to store the values from columns A and B
             data_list = []
             # Iterate through the rows and add A and B values to the list
